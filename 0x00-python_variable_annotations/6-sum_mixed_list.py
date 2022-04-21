@@ -3,6 +3,7 @@
 This project module contains a type-annotated function that takes a list 
 of integers and floats and returns their sum as a float.
 """
+
 from typing import List, Union
 
 
