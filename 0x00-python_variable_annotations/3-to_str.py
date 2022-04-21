@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
 This project module contains a type-annotated function that takes a float
-argument and returns the floor of the float.
+argument and returns the string representation of the float.
 """
 
 
-def floor(n: float) -> int:
+def to_str(n: float) -> str:
     """
-    This is a method that takes a float arguments
-    and returns the floor of the float.
+    This is a method that takes a float argument
+    and returns a string.
     Returns:
-        The floor of the float.
+        The string representation of the float.
     """
-    return int(n)
+    return str(n)
