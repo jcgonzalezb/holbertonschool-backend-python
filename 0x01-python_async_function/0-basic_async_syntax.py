@@ -15,5 +15,4 @@ async def wait_random(max_delay: int = 10) -> float:
     Returns:
         Value of random delay (float).
     """
-    i = random.uniform(0, max_delay)
-    return i
+    return random.uniform(0, max_delay)
