@@ -5,11 +5,12 @@ takes in two integer arguments and returns a list of random
 delays printed a number of times. The list should be in
 ascending order.
 """
+from typing import List
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     This is an asynchronous coroutine that takes in two
     integer arguments (n and max_delay) and returns a list
@@ -21,10 +22,7 @@ async def wait_n(n: int, max_delay: int) -> list:
     """
     wait_list = []
 
-    for i in range(0, n):
+    for i in range(n):
         wait_list.append(await wait_random(max_delay))
-        i += 1
 
-    sorted_list = sorted(wait_list)
-
-    return sorted_list
+    return sorted(wait_list)
