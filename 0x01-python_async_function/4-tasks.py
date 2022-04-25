@@ -5,6 +5,7 @@ takes in two integer arguments and returns a list of random
 delays printed a number of times. The list should be in
 ascending order.
 """
+import asyncio
 from typing import List
 
 task_wait_random = __import__('3-tasks').task_wait_random
@@ -20,9 +21,6 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     Returns:
         A list of all the delays (float values).
     """
-    wait_list = []
-
-    for i in range(n):
-        wait_list.append(await task_wait_random(max_delay))
-
-    return sorted(wait_list)
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
+    delay = [await task for task in asyncio.as_completed(tasks)]
+    return delay
