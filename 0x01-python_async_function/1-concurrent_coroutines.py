@@ -14,8 +14,8 @@ async def wait_n(n: int, max_delay: int = 10) -> float:
     This is an asynchronous coroutine that takes in two
     integer arguments (n and max_delay) and returns a list
     list of all the delays (float values). The number of
-    delays is the same as n. The list should be in ascending order
-    without using sort() because of concurrency.
+    delays is the same as n. The list should be in
+    ascending order without using sort().
     Returns:
         A list of all the delays (float values).
     """
