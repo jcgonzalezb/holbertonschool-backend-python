@@ -1,30 +1,25 @@
 #!/usr/bin/env python3
 """
-This project module contains an asynchronous coroutine that
-takes in two integer arguments and returns a list of random
-delays printed a number of times. The list should be in
-ascending order.
+This project module contains a function that takes in two
+integer arguments and measures the total execution time.
+Returns a float which is the total execution time over n
+(first parameter).
 """
 
 import time
+import asyncio
 
-wait_n = __import__('2-measure_runtime').wait_n
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(n: int, max_delay: int = 10) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """
-    This is an asynchronous coroutine that takes in two
-    integer arguments (n and max_delay) and returns a list
-    list of all the delays (float values). The number of
-    delays is the same as n. The list should be in
-    ascending order without using sort().
-    Returns:
-        A list of all the delays (float values).
+    This is a function to measure that takes in two
+    integer arguments and measures the total execution time.
+        Returns: A float which is the total execution time over n
+        (first parameter).
     """
-    begin = time.time()
-    wait_n(n, max_delay)
-    end = time.time()
-
-    total_time = end - begin
-
-    return (total_time / n)
+    start = time.perf_counter()
+    asyncio.run(wait_n(n, max_delay))
+    total_time = time.perf_counter() - start
+    return total_time / n
