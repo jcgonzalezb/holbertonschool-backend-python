@@ -9,7 +9,7 @@ ascending order.
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int = 10) -> list:
+async def wait_n(n: int, max_delay: int) -> list:
     """
     This is an asynchronous coroutine that takes in two
     integer arguments (n and max_delay) and returns a list
