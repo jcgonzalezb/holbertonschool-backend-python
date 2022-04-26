@@ -6,7 +6,6 @@ that takes no arguments. The coroutine will collect
 async_generator, then return the 10 random numbers.
 """
 
-
 async_generator = __import__(
     '0-async_generator').async_generator
 
