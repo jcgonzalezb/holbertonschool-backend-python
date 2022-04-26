@@ -6,11 +6,13 @@ that takes no arguments. The coroutine will collect
 async_generator, then return the 10 random numbers.
 """
 
+from typing import Generator
+
 async_generator = __import__(
     '0-async_generator').async_generator
 
 
-async def async_comprehension():
+async def async_comprehension() -> Generator[float, None, None]:
     """
     This is an asynchronous coroutine that takes no
     arguments. The coroutine will collect 10 random
