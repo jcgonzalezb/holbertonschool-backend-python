@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-This project module contains a coroutine that takes no
-arguments. The coroutine will loop 10 times, each time
-asynchronously wait 1 second, then yield a random 
-number between 0 and 10.
+This project module contains a asynchronous coroutine
+that takes no arguments. The coroutine will loop 10
+times, each time asynchronously wait 1 second, then
+yield a random number between 0 and 10.
 """
 
 import asyncio
