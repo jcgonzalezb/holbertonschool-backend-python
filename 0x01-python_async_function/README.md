@@ -1,4 +1,4 @@
-# Python - Python - Async
+# Python - Async
 
 ## Description of the files inside this folder:
 
