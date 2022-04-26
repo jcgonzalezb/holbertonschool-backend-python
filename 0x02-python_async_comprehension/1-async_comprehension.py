@@ -15,7 +15,7 @@ async def async_comprehension():
     This is an asynchronous coroutine that takes no
     arguments. The coroutine will collect 10 random
     numbers using an async comprehensing over
-    async_generator. 
+    async_generator.
     Returns:
         A list of 10 random numbers.
     """

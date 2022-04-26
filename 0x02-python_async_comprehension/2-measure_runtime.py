@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This project module contains a asynchronous coroutine 
+This project module contains a asynchronous coroutine
 that takes no arguments. The coroutine will execute
 async_comprehension four times in parallel using
 asyncio.gather. This coroutine should measure the
@@ -19,7 +19,7 @@ async def measure_runtime():
     """
     This is an asynchronous coroutine that takes no
     arguments. The coroutine will execute async_comprehension
-    four times in parallel using asyncio.gather. 
+    four times in parallel using asyncio.gather.
     Returns:
         The total runtime.
     """
