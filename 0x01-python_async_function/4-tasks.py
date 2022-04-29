@@ -13,9 +13,9 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Returns a list of all the delays (float values).
     """
-    concurrent_tasks = [task_wait_random(max_delay)
-                        for _ in range(n)]
-    completed_tasks = []
-    for task in asyncio.as_completed(concurrent_tasks):
-        completed_tasks.append(await task)
-    return completed_tasks
+    wait_list = []
+
+    for i in range(n):
+        wait_list.append(await task_wait_random(max_delay))
+
+    return sorted(wait_list)
