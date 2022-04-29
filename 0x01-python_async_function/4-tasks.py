@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-This project module contains an asynchronous coroutine that
-takes in two integer arguments and returns a list of random
-delays printed a number of times. The list should be in
-ascending order.
+This project module contains an asynchronous coroutine
+that takes in two integer arguments and returns a
+list of random delays printed a number of times. The
+list should be in ascending order.
 """
 
 import asyncio
