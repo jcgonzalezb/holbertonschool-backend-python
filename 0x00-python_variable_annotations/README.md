@@ -13,6 +13,9 @@
 7. This project module contains a type-annotated function that takes a string and an int OR float v as arguments and returns a tuple.
 8. This project module contains a type-annotated function that takes a float multiplier as argument and returns a function that multiplies a float by multiplier.
 9. This project module contains a type-annotated function that takes parameters and returns a list of values.
+100. Fix a code with the correct duck-typed annotations.
+101. Given the parameters and the return values, add type annotations to the function.
+102. Use mypy to validate a piece of code and apply any necessary changes.
 
 ## Languages and Tools:
 
