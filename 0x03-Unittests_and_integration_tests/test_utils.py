@@ -2,10 +2,10 @@
 """ This project module contains the first unit test
 for utils.access_nested_map.
 """
-from utils import access_nested_map
-from parameterized import parameterized
 
 import unittest
+from utils import access_nested_map
+from parameterized import parameterized
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -21,7 +21,3 @@ class TestAccessNestedMap(unittest.TestCase):
         """ Tests if access_nested_map method returns what it is supposed to.
         """
         self.assertEqual(access_nested_map(nested_map, path), expected_result)
-
-
-if __name__ == '__main__':
-    unittest.main()
