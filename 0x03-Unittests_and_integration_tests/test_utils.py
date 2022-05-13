@@ -17,13 +17,13 @@ class TestAccessNestedMap(unittest.TestCase):
     """ TestAccessNestedMap inherits from unittest.TestCase to test
     utils.access_nested_map.
     """
-    @parameterized.expand([
+    @parameterized.expand(
         nested_map={"a": 1}, path=("a",),
         nested_map={"a": {"b": 2}}, path=("a",),
         nested_map={"a": {"b": 2}}, path=("a", "b")
-    ])
-    
-    def TestAccessNestedMap(self, nested_map: Mapping, path: Sequence):
+    )
+
+    def TestAccessNestedMap(self, nested_map, path):
         """ Method to test that the method returns what it is supposed to.
         """
         self.assertEqual(nested_map, path)
