@@ -29,13 +29,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map_exception(self, nested_map, path):
         """ Tests if access_nested_map method returns what it is supposed to.
         """
-        self.assertRaises(KeyError, access_nested_map(nested_map, path))
-        #self.assertRaises(access_nested_map(nested_map, path), expected_result)
-            
-
-
-
-
+        self.assertRaises(KeyError, access_nested_map, nested_map, path)
 
 
 
