@@ -1,27 +1,30 @@
 #!/usr/bin/env python3
 """ This project module contains the first unit test
-for utils.access_nested_map.
+for client.py file.
 """
 
 import unittest
 from unittest.mock import patch
-from utils import access_nested_map, get_json, memoize
+from client import GithubOrgClient, get_json
 from parameterized import parameterized
 
 
 class TestGithubOrgClient(unittest.TestCase):
-    """ TestAccessNestedMap inherits from unittest. TestCase to test
-    utils.access_nested_map.
+    """ TestGithubOrgClient inherits from unittest. TestCase to test
+    client.GithubOrgClient.
     """
     @parameterized.expand([
-        ({"a": 1}, ("a",), 1),
-        ({"a": {"b": 2}}, ("a",), {"b": 2}),
-        ({"a": {"b": 2}}, ("a", "b"), 2)
+        ("google", {}),
+        ("abc", {})
     ])
-    def test_org(self, nested_map, path, expected_result):
+    @patch('client.get_json')
+    def test_org(self, url, expected_result, mock):
         """ Tests that GithubOrgClient.org returns the correct value.
         """
-        self.assertEqual(access_nested_map(nested_map, path), expected_result)
+        mock.return_value = {}
+        r = GithubOrgClient(url)
+        self.assertEqual(r.org, expected_result)
+        mock.assert_called_once()
 
 
 if __name__ == "__main__":
