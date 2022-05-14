@@ -56,8 +56,8 @@ class TestMemoize(unittest.TestCase):
     """
 
     def test_memoize(self):
-        """Tests if memoize returns the correct result is returned
-        after a_property is called twice.
+        """Tests if memoize returns the correct result after a_property
+        is called twice.
         """
         class TestClass:
             """ TestClass to test utils.memoize."""
