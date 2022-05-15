@@ -43,8 +43,10 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_has_license(self, repo, license_key, expected_result):
         """ Tests that has_license returns the correct values.
         """
-        gt = GithubOrgClient
-        self.assertEqual(gt.has_license(repo, license_key), expected_result)
+        self.assertEqual(
+            GithubOrgClient.has_license(repo, license_key),
+            expected_result
+        )
 
 
 if __name__ == "__main__":
