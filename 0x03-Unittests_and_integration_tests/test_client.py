@@ -36,6 +36,32 @@ class TestGithubOrgClient(unittest.TestCase):
             r = tg._public_repos_url
             self.assertEqual(r, mock.return_value.get('repos_url'))
 
+    @patch('client.get_json')
+    def test_public_repos(self):
+        """ Tests that test_public_repos returns a known payload.
+        """
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as mock:
+            mock.return_value = ['name']
+            tg = GithubOrgClient('xyz')
+            r = tg.public_repos
+            self.assertEqual(r, mock.return_value)
+            mock.assert_called_once()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @parameterized.expand([
         ({"license": {"key": "my_license"}}, "my_license", True),
         ({"license": {"key": "other_license"}}, "my_license", False)
