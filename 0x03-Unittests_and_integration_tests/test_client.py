@@ -53,8 +53,8 @@ class TestGithubOrgClient(unittest.TestCase):
                 {'name': 'repo_1'},
                 {'name': 'repo_2'}
             ]
-            tg = GithubOrgClient('xyz')
-            r = tg._public_repos_url
+            ghc = GithubOrgClient('xyz')
+            r = ghc._public_repos_url
             self.assertEqual(r, mock.return_value)
             mock.assert_called_once()
             get_json_mock.assert_called_once()
