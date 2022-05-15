@@ -36,6 +36,16 @@ class TestGithubOrgClient(unittest.TestCase):
             r = tg._public_repos_url
             self.assertEqual(r, mock.return_value.get('repos_url'))
 
+    @parameterized.expand([
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False)
+    ])
+    def test_has_license(self, repo, license_key, expected_result):
+        """ Tests that has_license returns the correct values.
+        """
+        gt = GithubOrgClient
+        self.assertEqual(gt.has_license(repo, license_key), expected_result)
+
 
 if __name__ == "__main__":
     unittest.main()
