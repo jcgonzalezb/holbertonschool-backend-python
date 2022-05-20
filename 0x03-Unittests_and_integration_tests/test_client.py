@@ -90,8 +90,8 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
             side_effect=[
                 cls.org_payload,
                 cls.repos_payload,
-                cls.expected_repos,
-                cls.apache2_repos
+                cls.org_payload,
+                cls.repos_payload,
             ]
         )
         cls.get_patcher.start()
